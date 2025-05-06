@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class MoveForward : MonoBehaviour
 {
-    public GameObject apple;
-
+    public float speed = 40;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,9 +14,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Instantiate(apple, transform.position, apple.transform.rotation);
-        }
+        transform.Translate(Vector3.forward * speed * Time.deltaTime); 
     }
 }
